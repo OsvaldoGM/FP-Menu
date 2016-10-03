@@ -21,13 +21,34 @@ public class FPMENU {
  public static int menu (){
      int opcion;
      Scanner entrada = new Scanner (System.in);
-     System.out.println("**** Cálculo d areas ****");
-     System.out.println("**** Menú: ****");
-     System.out.println("Introduzca la opción deseada: ");
-     System.out.println("1. Área de cuadrados. ");
-     System.out.println("2. Área de círuclos. ");
-     System.out.println("3. Área de triángulos. ");
-     opcion = entrada.nextInt();
+     do{
+        System.out.println("**** Cálculo d areas ****");
+        System.out.println("**** Menú: ****");
+        System.out.println("Introduzca la opción deseada: ");
+        System.out.println("1. Área de cuadrados. ");
+        System.out.println("2. Área de círuclos. ");
+        System.out.println("3. Área de triángulos. ");
+        System.out.println("0. Salir ");
+        opcion = entrada.nextInt();
+    }while(opcion<0 || opcion>=4);
      return opcion;
- }   
+ }
+ public static float CalculaAreas(int o){
+     float area;
+     switch (o){
+         case 1:
+             area = areaCuadrado();
+             break;
+         case 2:
+             area = areaCirculo();
+             break;
+         case 3:
+             area = areaTriangulo();
+             break;
+         default:
+             area = mensajeSalida();
+             
+     }
+     return area;
+ }
 }
